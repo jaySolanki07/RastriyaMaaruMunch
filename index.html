@@ -9,10 +9,106 @@
         मारु सेन समाज
         </title>
 <style>
+
+
+.btnSubmit{
+    padding: 6px 20px;
+            border: 2px solid black;
+            background: linear-gradient(45deg,
+             yellow 0%,
+             orange 50%,
+             red 100%
+           
+            );
+            margin: auto;
+            display: block;
+            /* background-color: brown; */
+            color: black;
+            /* margin: 17px; */
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor:alias;
+}
+
+    /* Search box styles */
+    .search-box {
+      margin-left: 5%;
+      display: inline-block;
+      position: relative;
+    }
+
+    .search-box input[type="text"] {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .search-box button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 8px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .social-media {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    background: url('Contact-us.jpg') no-repeat center center/cover;
+    z-index: 1;
+    
+}
+
+.search-box::before{
+    content: "";
+            background-color: black;
+            position: absolute;
+            top:0px;
+            left:0px;
+            height: 100%;
+            width:100%;
+            z-index: -1;
+            opacity: 0.7;
+}
+
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    
+}
+
+.custom{
+    color: black;
+    text-shadow: 0 0 3px black;
+}
+
+/* ------------------------------------------------------------------------------- */
         /* CSS Reset */
         *{
             margin: 0;
             padding: 0;
+        }
+
+        
+
+
+
+        #Image{
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
         
         html{
@@ -30,6 +126,7 @@
             align-items: center;
             position: sticky;
             top: 0px;
+            
         }
         
         #navbar::before{
@@ -58,11 +155,14 @@
         /* Navigation Bar: List Styling */
         
         #navbar ul{
-            display: flex;
+            
+            margin-left: 15%;
+            display:flex;
             font-family: 'Baloo Bhai', cursive;
         }
         
         #navbar ul li{ 
+            
             list-style: none;
             font-size: 1.3rem;
         }
@@ -70,9 +170,9 @@
         #navbar ul li a{
             color: white;
             display: block;
-            padding: 3px 22px;
+            padding:3px 22px;
             border-radius: 20px;
-            text-decoration: none;
+            text-decoration:none;
         }
         
         #navbar ul li a:hover{
@@ -93,7 +193,7 @@
         #home::before{ 
             content: "";
             position: absolute;
-            background: url('../logo.jpeg') no-repeat center center/cover;
+            background: url('logo.jpeg') no-repeat center center/cover;
             height: 642px;
             top:0px;
             left:0px;
@@ -153,9 +253,9 @@
         #client-section::before{
          content: "";
          position: absolute;
-         background: url('../logo2.jpeg');
+         background: url('logo2.jpeg');
          width: 100%;
-         height: 100%;
+         height: 77%;
          z-index: -1;
          opacity: 0.3;
         }
@@ -163,11 +263,11 @@
         #clients{
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items:center;
         }
         
         .client-item{
-            padding: 34px;
+            padding: 0px;
         }
         
         #clients img{
@@ -186,7 +286,7 @@
             height: 100%;
             z-index: -1;
             opacity: 0.7;
-            background: url('../logo.jpeg') no-repeat center center/cover;
+            background: url('logo.jpeg') no-repeat center center/cover;
         
         }
         #contact-box{
@@ -246,7 +346,7 @@
             margin: 17px;
             font-size: 1.5rem;
             border-radius: 10px;
-            cursor:pointer;
+            cursor:alias;
         }
         
         .center{
@@ -262,16 +362,24 @@
 </head>
 
 <body>
+
+
+
     <nav id="navbar">
         <div id="logo">
-            <img src="logo.jpeg" alt="राष्ट्रीय मारु मंच.com">
+            <img id="Image" src="logo.jpeg" alt="राष्ट्रीय मारु मंच.com">
         </div>
         <ul>
             <li class="item"><a href="#home">Home</a></li>
-            <li class="item"><a href="#services-container">Membership</a></li>
             <li class="item"><a href="#client-section">Knowledge Hub</a></li>
-            <li class="item"><a href="#contact">Contact Us</a></li>
+            <li class="item"><a href="#contact">Feedback</a></li>
+            <li class="item"><a href="#Menber">Membership</a></li>
+            <li class="item"><a href="#con">Contact Us</a></li>
         </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button type="button" onclick="searchElements()">Search</button>
+          </div>
     </nav>
 
     <section id="home">
@@ -284,9 +392,11 @@
     <!-- <section id="services-container"> -->
         <!-- <h1 class="h-primary center">Our Services</h1> -->
         <!-- <div id="services"> -->
-            <!-- <div class="box">
-                <img src="logo.jpeg" alt="">
-                <h2 class="h-secondary center">Articles</h2>
+            <!-- <div class="box"> -->
+
+                <!-- <img src="logo.jpeg" alt=""> -->
+
+              <!--  <h2 class="h-secondary center">Articles</h2>
                 <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et qui, repudiandae similique nam, recusandae quidem ab asperiores ex, aut fugit labore veritatis facere?
                     sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
@@ -318,11 +428,11 @@
                 <img src="img1.jpeg" alt="Our Client">
             </div>
             <div class="client-item">
-                <img src="img2.jpeg" alt="Our Client">
+                <img src="img3.jpeg" alt="Our Client">
             </div>
           
             <div class="client-item">
-                <img src="img3.jpeg" alt="Our Client">
+                <img src="img2.jpeg" alt="Our Client">
             </div>
             <div class="client-item">
                 <img src="img5.jpeg" alt="Our Client">
@@ -332,28 +442,71 @@
     </section>
 
     <section id="contact">
-        <h1 class="h-primary center">Contact Us</h1>
+        <h1 class="h-primary center">Your Feedback</h1>
         <div id="contact-box">
-            <form action="">
+
+            <form action="" onsubmit="return validateForm()">
                 <div class="form-group">
                     <label for="name">Name: </label>
-                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email: </label>
-                    <input type="email" name="name" id="email" placeholder="Enter your email">
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone Number: </label>
-                    <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                    <input type="number" name="phone" id="phone" placeholder="Enter your phone" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Message: </label>
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea required>
                 </div>
+                <br>
+                <button type="submit" class="btnSubmit" >Submit</button>
             </form>
+
         </div>
     </section>
+
+
+    <section id="Menber">
+        <div id="clients">
+            <h1>Get your Membership Now to join with Us: </h1>
+            <br>
+            <button><a href="Membership_Form.html">Get a Membership</a></button>
+
+        </div>
+
+    </section>
+    <div class="social-media">
+
+        <button onclick="modal.showModal()">Click me to get contact number on top-left</button>
+        <dialog id="modal">
+             +91 9426220392 <br>
+             +91 9898253490 <br>
+
+             <button onclick="modal.close()">Close</button>
+        </dialog>
+        
+        <h2 id="con" class="custom"><u>Contact-Us on Social Media</u></h2>
+        <br>
+        <!-- <a href="https://wa.me/your-whatsapp-id" target=""> -->
+            <a href="https://wa.me/your-whatsapp-id"><img src="whatsapp-logo2.png" alt="whatsapp-logo2">
+        </a>
+        <!-- <a href="https://facebook.com/your-facebook-id" target=""> -->
+            <a href="https://facebook.com/your-facebook-id"><img src="Facebook_icon.jpg" alt="">
+        </a>
+        <!-- <a href="https://instagram.com/your-instagram-id" target=""> -->
+            <a href="https://instagram.com/your-instagram-id"><img src="insta-logo.png" alt="">
+        </a>
+        <!-- <a href="https://youtube.com/your-youtube-id" target=""> -->
+            <a href="https://youtube.com/your-youtube-id"><img src="youtube-logo.png" alt="">
+        </a>
+        <!-- <a href="https://twitter.com/your-twitter-id" target=""> -->
+            <a href="https://twitter.com/your-twitter-id"><img src="twitter-logo.png" alt="" ></a>
+        <!-- </a> -->
+    </div>
 
     <footer>
         <div class="center">
@@ -361,6 +514,37 @@
             मारु सेन समाज.com. All rights reserved!
         </div>
     </footer>
+
+    <script>
+        function searchElements() {
+
+        if (searchElements) {
+            alert("Sorry! We Couldn't Found that Element.")
+        }
+    }
+
+    function validateForm() {
+            // Get form elements
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
+
+            // Check if required fields are empty
+            if (name === '' || email === '' || phone === '' || message === '') {
+                alert('Please fill in all required fields.');
+                return false; // Prevent form submission
+            }
+            else{
+                alert('Your response has been saved!')
+            }
+
+            // If all validation passes, allow form submission
+            return true;
+        }
+
+
+      </script>
 </body>
 
 </html>
